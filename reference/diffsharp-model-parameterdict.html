@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ParameterDict (DiffSharp)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Atılım Güneş Baydin, Don Syme, Barak A. Pearlmutter, Jeffrey Siskind, and DiffSharp contributors">
+    <meta name="description" content="DiffSharp is a tensor library with support for differentiable programming. It is designed for use in machine learning, probabilistic programming, optimization and other domains.">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href="https://diffsharp.github.io/content/fsdocs-default.css" />
+    <script src="https://diffsharp.github.io/content/fsdocs-tips.js" type="text/javascript"></script>
+
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="https://fsharp.org">fsharp.org</a></li>
+        </ul>
+        <h3 class="muted">DiffSharp</h3>
+      </div> -->
+      <!-- <hr /> -->
+      <div class="row">
+        <div class="col-xs-12" style="height:10px;"></div>
+      </div>
+      <div class="row">
+        <div class="span3" id="fsdocs-nav">
+          <a href="index.html"><img class="logo" src="https://diffsharp.github.io/img/diffsharp-logo-text.png"/></a>
+
+          <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+          <div id="header">
+            <div class="searchbox">
+                <label for="search-by">
+                    <i class="fas fa-search"></i>
+                </label>
+                <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                <span data-search-clear="">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+          </div>
+          <!-- END SEARCH BOX: this adds support for the search box -->
+
+          <ul class="nav nav-list" id="menu">
+              <!-- <li class="nav-header">DiffSharp</li> -->
+              <!-- <li class="divider"></li> -->
+              <li><a href="https://diffsharp.github.io/index.html">Home</a></li>
+              <li><a href="https://github.com/DiffSharp/DiffSharp/">GitHub</a></li>
+              <li><a href="https://github.com/DiffSharp/DiffSharp/blob/dev/LICENSE">License (BSD)</a></li>
+
+              <li class="nav-header">Getting Started</li>
+              <!-- <li class="divider"></li> -->
+              <li><a href="https://diffsharp.github.io/getting-started-install.html">Install</a></li>
+              <li><a href="https://diffsharp.github.io/getting-started-overview.html">Overview</a></li>
+              <li><a href="https://github.com/DiffSharp/DiffSharp/tree/dev/examples">Examples</a></li>
+
+              <li class="nav-header">Documentation</li>
+              <li><a href="https://diffsharp.github.io/reference/index.html">API reference</a></li>
+              <li><a href="https://diffsharp.github.io/documentation-extensions.html">Extensions</a></li>
+
+              <!-- <li class="nav-header">Examples</li> -->
+              <!-- <li class="divider"></li> -->
+              <!-- <li class="nav-header">Machine Learning</li> -->
+              <!-- <li><a href="https://diffsharp.github.io/examples-topic1.html">Topic 1</a></li> -->
+
+              <!-- <li class="divider"></li>
+              <li class="nav-header">Authors</li>
+              <li><a href="http://www.robots.ox.ac.uk/~gunes/">Atılım Güneş Baydin</a></li>
+              <li><a href="http://www.bcl.hamilton.ie/~barak/">Barak A. Pearlmutter</a></li>
+              <li><a href="https://www.microsoft.com/en-us/research/people/dsyme/">Don Syme</a></li> -->
+          </ul>
+        </div>
+        <div class="span9" id="fsdocs-content">
+          <div>
+  <h2>
+    ParameterDict Type
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://diffsharp.github.io/reference/diffsharp-model.html">
+        DiffSharp.Model
+      </a>
+    </dt>
+    <dt>
+      Assembly: DiffSharp.Core.dll
+    </dt>
+    <dt>
+      Base Type: 
+      <code>obj</code>
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        Represents a collection of named parameters in a model.
+      </p>
+    </div>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Constructors
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Constructor
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1234', 1234)" onmouseover="showTip(event, '1234', 1234)">
+                <p>
+                  <a id="( .ctor )">
+                    <a href="#( .ctor )">
+                      <code><span>ParameterDict<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1234">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ParameterDict<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.#ctor`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.#ctor\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L55-55" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1235', 1235)" onmouseover="showTip(event, '1235', 1235)">
+                <p>
+                  <a id="Item">
+                    <a href="#Item">
+                      <code><span>this.[<span>key</span>]</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1235">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.[<span>key</span>]</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>string</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:P:DiffSharp.Model.ParameterDict.Item`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'P:DiffSharp.Model.ParameterDict.Item\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L64-64" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1236', 1236)" onmouseover="showTip(event, '1236', 1236)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>this.add&#32;<span>parameters</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1236">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.add&#32;<span>parameters</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        parameters
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.add`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.add\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L75-75" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameters
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1237', 1237)" onmouseover="showTip(event, '1237', 1237)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>this.add&#32;<span>parameters</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1237">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.add&#32;<span>parameters</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        parameters
+                      </b>
+                      :
+                      <code><span><span>(<span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>)</span>&#32;list</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.add`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.add\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L72-72" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameters
+                </span>
+                :
+                <code><span><span>(<span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>)</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1238', 1238)" onmouseover="showTip(event, '1238', 1238)">
+                <p>
+                  <a id="add">
+                    <a href="#add">
+                      <code><span>this.add&#32;<span><span>(<span>name,&#32;parameter</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1238">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.add&#32;<span><span>(<span>name,&#32;parameter</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        name
+                      </b>
+                      :
+                      <code>string</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        parameter
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.add`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.add\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L69-69" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  name
+                </span>
+                :
+                <code>string</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameter
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1239', 1239)" onmouseover="showTip(event, '1239', 1239)">
+                <p>
+                  <a id="copy">
+                    <a href="#copy">
+                      <code><span>this.copy&#32;<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1239">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.copy&#32;<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.copy`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.copy\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L78-78" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1240', 1240)" onmouseover="showTip(event, '1240', 1240)">
+                <p>
+                  <a id="derivative">
+                    <a href="#derivative">
+                      <code><span>this.derivative&#32;</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1240">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.derivative&#32;</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:P:DiffSharp.Model.ParameterDict.derivative`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'P:DiffSharp.Model.ParameterDict.derivative\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L139-139" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1241', 1241)" onmouseover="showTip(event, '1241', 1241)">
+                <p>
+                  <a id="flatten">
+                    <a href="#flatten">
+                      <code><span>this.flatten&#32;<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1241">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.flatten&#32;<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.flatten`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.flatten\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L145-145" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1242', 1242)" onmouseover="showTip(event, '1242', 1242)">
+                <p>
+                  <a id="forwardDiff">
+                    <a href="#forwardDiff">
+                      <code><span>this.forwardDiff&#32;<span><span>(<span>derivatives,&#32;?tag</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1242">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.forwardDiff&#32;<span><span>(<span>derivatives,&#32;?tag</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        derivatives
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                       - 
+                      The derivatives of the parameters
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?tag
+                      </b>
+                      :
+                      <code>uint32</code>
+                       - 
+                      The level tag for nested differentiation.  Defaults to the current global nesting level
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.forwardDiff`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.forwardDiff\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L106-106" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+  Adjust the parameters to include support for forward-mode automatic differentiation.
+ 
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              
+  After this call the current parameters of the model will have attached derivatives for forward mode propagation.
+ 
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  derivatives
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The derivatives of the parameters
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?tag
+                </span>
+                :
+                <code>uint32</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The level tag for nested differentiation.  Defaults to the current global nesting level
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1243', 1243)" onmouseover="showTip(event, '1243', 1243)">
+                <p>
+                  <a id="iter">
+                    <a href="#iter">
+                      <code><span>this.iter&#32;<span>f</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1243">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.iter&#32;<span>f</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>&#32;->&#32;unit</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.iter`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.iter\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L96-96" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>&#32;->&#32;unit</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1244', 1244)" onmouseover="showTip(event, '1244', 1244)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>this.map&#32;<span>f</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1244">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.map&#32;<span>f</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a>&#32;->&#32;<a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.map`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.map\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L90-90" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a>&#32;->&#32;<a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1245', 1245)" onmouseover="showTip(event, '1245', 1245)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>this.map&#32;<span>f</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1245">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.map&#32;<span>f</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></span>&#32;->&#32;<span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.map`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.map\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L87-87" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></span>&#32;->&#32;<span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1246', 1246)" onmouseover="showTip(event, '1246', 1246)">
+                <p>
+                  <a id="map">
+                    <a href="#map">
+                      <code><span>this.map&#32;<span>f</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1246">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.map&#32;<span>f</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        f
+                      </b>
+                      :
+                      <code><span><span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>&#32;->&#32;<span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.map`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.map\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L81-81" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  f
+                </span>
+                :
+                <code><span><span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>&#32;->&#32;<span>string&#32;*&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span></span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1247', 1247)" onmouseover="showTip(event, '1247', 1247)">
+                <p>
+                  <a id="move">
+                    <a href="#move">
+                      <code><span>this.move&#32;<span><span>(<span>?dtype,&#32;?device,&#32;?backend</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1247">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.move&#32;<span><span>(<span>?dtype,&#32;?device,&#32;?backend</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ?dtype
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-dtype.html">Dtype</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?device
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-device.html">Device</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?backend
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-backend.html">Backend</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.move`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.move\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L131-131" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?dtype
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-dtype.html">Dtype</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?device
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-device.html">Device</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?backend
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-backend.html">Backend</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1248', 1248)" onmouseover="showTip(event, '1248', 1248)">
+                <p>
+                  <a id="nelement">
+                    <a href="#nelement">
+                      <code><span>this.nelement&#32;</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1248">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.nelement&#32;</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>int</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:P:DiffSharp.Model.ParameterDict.nelement`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'P:DiffSharp.Model.ParameterDict.nelement\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L142-142" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1249', 1249)" onmouseover="showTip(event, '1249', 1249)">
+                <p>
+                  <a id="noDiff">
+                    <a href="#noDiff">
+                      <code><span>this.noDiff&#32;<span>()</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1249">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.noDiff&#32;<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.noDiff`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.noDiff\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L128-128" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1250', 1250)" onmouseover="showTip(event, '1250', 1250)">
+                <p>
+                  <a id="primal">
+                    <a href="#primal">
+                      <code><span>this.primal&#32;</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1250">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.primal&#32;</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:P:DiffSharp.Model.ParameterDict.primal`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'P:DiffSharp.Model.ParameterDict.primal\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L136-136" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1251', 1251)" onmouseover="showTip(event, '1251', 1251)">
+                <p>
+                  <a id="reverseDiff">
+                    <a href="#reverseDiff">
+                      <code><span>this.reverseDiff&#32;<span>?tag</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1251">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.reverseDiff&#32;<span>?tag</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ?tag
+                      </b>
+                      :
+                      <code>uint32</code>
+                       - 
+                      The level tag for nested differentiation.  Defaults to the current global nesting level
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.reverseDiff`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.reverseDiff\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L121-121" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                
+  Adjust the parameters to include support for reverse-mode automatic differentiation.
+ 
+              </p>
+            </div>
+            <p class="fsdocs-remarks">
+              
+  After this call the current parameters of the model will support reverse-mode propagation. After the completion
+  of the corresponding <code>reverse</code> operation, the computed derivative
+  will be available. 
+ 
+            </p>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ?tag
+                </span>
+                :
+                <code>uint32</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The level tag for nested differentiation.  Defaults to the current global nesting level
+                </p>
+              </dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1252', 1252)" onmouseover="showTip(event, '1252', 1252)">
+                <p>
+                  <a id="set">
+                    <a href="#set">
+                      <code><span>this.set&#32;<span>parameters</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1252">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.set&#32;<span>parameters</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        parameters
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.set`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.set\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L93-93" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  parameters
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1253', 1253)" onmouseover="showTip(event, '1253', 1253)">
+                <p>
+                  <a id="unflatten">
+                    <a href="#unflatten">
+                      <code><span>this.unflatten&#32;<span>tensors</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1253">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.unflatten&#32;<span>tensors</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tensors
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.unflatten`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.unflatten\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L151-151" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tensors
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1254', 1254)" onmouseover="showTip(event, '1254', 1254)">
+                <p>
+                  <a id="unflattenToNew">
+                    <a href="#unflattenToNew">
+                      <code><span>this.unflattenToNew&#32;<span>tensors</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1254">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.unflattenToNew&#32;<span>tensors</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        tensors
+                      </b>
+                      :
+                      <code><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:DiffSharp.Model.ParameterDict.unflattenToNew`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:DiffSharp.Model.ParameterDict.unflattenToNew\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L164-164" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  tensors
+                </span>
+                :
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-tensor.html">Tensor</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">ParameterDict</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '1255', 1255)" onmouseover="showTip(event, '1255', 1255)">
+                <p>
+                  <a id="values">
+                    <a href="#values">
+                      <code><span>this.values&#32;</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="1255">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.values&#32;</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<span>string,&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:P:DiffSharp.Model.ParameterDict.values`')">
+                <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'P:DiffSharp.Model.ParameterDict.values\'/>')">
+                <img src="https://diffsharp.github.io/content/img/copy.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L61-61" class="fsdocs-source-link">
+                <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+                <img src="https://diffsharp.github.io/content/img/github-blue.png" class="hover"/>
+              </a>
+              <p class="fsdocs-summary">
+                TBD
+              </p>
+            </div>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<span>string,&#32;<a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">Parameter</a></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+</div>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3"></div>
+        <div class="span9">
+          <hr>
+          <p style="height:50px;  display: table-cell; vertical-align: bottom;">© Copyright 2021, DiffSharp Contributors.</p>
+          <br>
+        </div>
+      </div>
+  </div>
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <script type="text/javascript">var fsdocs_search_baseurl = 'https://diffsharp.github.io/'</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+    <script type="text/javascript" src="https://diffsharp.github.io/content/fsdocs-search.js"></script>
+    <!-- END SEARCH BOX: this adds support for the search box -->
+  </body>
+</html>
