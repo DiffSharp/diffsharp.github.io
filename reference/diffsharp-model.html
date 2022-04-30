@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DiffSharp.Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Atılım Güneş Baydin, Don Syme, Barak A. Pearlmutter, Jeffrey Siskind, and DiffSharp contributors">
+    <meta name="description" content="DiffSharp is a tensor library with support for differentiable programming. It is designed for use in machine learning, probabilistic programming, optimization and other domains.">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href="https://diffsharp.github.io/content/fsdocs-default.css" />
+    <script src="https://diffsharp.github.io/content/fsdocs-tips.js" type="text/javascript"></script>
+
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="https://fsharp.org">fsharp.org</a></li>
+        </ul>
+        <h3 class="muted">DiffSharp</h3>
+      </div> -->
+      <!-- <hr /> -->
+      <div class="row">
+        <div class="col-xs-12" style="height:10px;"></div>
+      </div>
+      <div class="row">
+        <div class="span3" id="fsdocs-nav">
+          <a href="index.html"><img class="logo" src="https://diffsharp.github.io/img/diffsharp-logo-text.png"/></a>
+
+          <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+          <div id="header">
+            <div class="searchbox">
+                <label for="search-by">
+                    <i class="fas fa-search"></i>
+                </label>
+                <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                <span data-search-clear="">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+          </div>
+          <!-- END SEARCH BOX: this adds support for the search box -->
+
+          <ul class="nav nav-list" id="menu">
+              <!-- <li class="nav-header">DiffSharp</li> -->
+              <!-- <li class="divider"></li> -->
+              <li><a href="https://diffsharp.github.io/index.html">Home</a></li>
+              <li><a href="https://github.com/DiffSharp/DiffSharp/">GitHub</a></li>
+              <li><a href="https://github.com/DiffSharp/DiffSharp/blob/dev/LICENSE">License (BSD)</a></li>
+
+              <li class="nav-header">Getting Started</li>
+              <!-- <li class="divider"></li> -->
+              <li><a href="https://diffsharp.github.io/install.html">Install</a></li>
+              <li><a href="https://diffsharp.github.io/quickstart.html">Quickstart</a></li>
+              <!-- <li><a href="https://diffsharp.github.io/tensors.html">Tensors</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/differentiable-programming.html">Differentiable Programming</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/nested-derivatives.html">Nested Derivatives</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/models.html">Models</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/optimization.html">Optimization</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/probability-distributions.html">Probability Distributions</a></li> -->
+
+              <li class="nav-header">Tutorials</li>
+              <!-- <li class="divider"></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/tutorial-classifier.html">Classifier</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/tutorial-gan.html">GAN</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/tutorial-vae.html">VAE</a></li> -->
+              <!-- <li><a href="https://diffsharp.github.io/tutorial-language.html">Language Models</a></li> -->
+              <li><a href="https://github.com/DiffSharp/DiffSharp/tree/dev/examples">More Examples</a></li>
+
+              <li class="nav-header">API Documentation</li>
+              <li><a href="https://diffsharp.github.io/reference/index.html">API Reference</a></li>
+              <li><a href="https://diffsharp.github.io/extensions.html">Extensions</a></li>
+
+              <!-- <li class="nav-header">Examples</li> -->
+              <!-- <li class="divider"></li> -->
+              <!-- <li class="nav-header">Machine Learning</li> -->
+              <!-- <li><a href="https://diffsharp.github.io/examples-topic1.html">Topic 1</a></li> -->
+
+              <!-- <li class="divider"></li>
+              <li class="nav-header">Authors</li>
+              <li><a href="http://www.robots.ox.ac.uk/~gunes/">Atılım Güneş Baydin</a></li>
+              <li><a href="http://www.bcl.hamilton.ie/~barak/">Barak A. Pearlmutter</a></li>
+              <li><a href="https://www.microsoft.com/en-us/research/people/dsyme/">Don Syme</a></li> -->
+          </ul>
+        </div>
+        <div class="span9" id="fsdocs-content">
+          <div>
+  <h2 id="diffsharp-model">
+    DiffSharp.Model Namespace
+  </h2>
+  <div class="fsdocs-xmldoc">
+    <p>
+      Contains types and functionality related to describing models.
+    </p>
+  </div>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Type/Module
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="BatchNorm1d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-batchnorm1d.html">
+                BatchNorm1d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.BatchNorm1d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.BatchNorm1d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.BatchNorm.fs#L29-29" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Applies Batch Normalization over a 2D or 3D input (a mini-batch of 1D inputs with optional additional channel dimension)
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="BatchNorm2d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-batchnorm2d.html">
+                BatchNorm2d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.BatchNorm2d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.BatchNorm2d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.BatchNorm.fs#L121-121" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Applies Batch Normalization over a 4D input (a mini-batch of 2D inputs with optional additional channel dimension)
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="BatchNorm3d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-batchnorm3d.html">
+                BatchNorm3d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.BatchNorm3d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.BatchNorm3d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.BatchNorm.fs#L199-199" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Applies Batch Normalization over a 5D input (a mini-batch of 3D inputs with optional additional channel dimension)
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Conv1d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-conv1d.html">
+                Conv1d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Conv1d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Conv1d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Conv.fs#L11-11" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a 1D convolution over an input signal composed of several input planes
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Conv2d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-conv2d.html">
+                Conv2d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Conv2d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Conv2d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Conv.fs#L38-38" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a 2D convolution over an input signal composed of several input planes
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Conv3d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-conv3d.html">
+                Conv3d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Conv3d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Conv3d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Conv.fs#L66-66" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a 3D convolution over an input signal composed of several input planes
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ConvTranspose1d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-convtranspose1d.html">
+                ConvTranspose1d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.ConvTranspose1d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.ConvTranspose1d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.ConvTranspose.fs#L12-12" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a 1D transposed convolution operator over an input image composed of several input planes.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ConvTranspose2d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-convtranspose2d.html">
+                ConvTranspose2d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.ConvTranspose2d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.ConvTranspose2d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.ConvTranspose.fs#L40-40" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a 2D transposed convolution operator over an input image composed of several input planes.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ConvTranspose3d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-convtranspose3d.html">
+                ConvTranspose3d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.ConvTranspose3d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.ConvTranspose3d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.ConvTranspose.fs#L68-68" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a 3D transposed convolution operator over an input image composed of several input planes.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Dropout">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-dropout.html">
+                Dropout
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Dropout`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Dropout\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Dropout.fs#L10-10" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model which during training, randomly zeroes some of the elements of the input tensor with probability p using samples from a Bernoulli distribution.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Dropout2d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-dropout2d.html">
+                Dropout2d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Dropout2d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Dropout2d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Dropout.fs#L22-22" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model which during training, randomly zero out entire channels. Each channel will be zeroed out independently on every forward call with probability p using samples from a Bernoulli distribution.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Dropout3d">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-dropout3d.html">
+                Dropout3d
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Dropout3d`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Dropout3d\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Dropout.fs#L34-34" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model which during training, randomly zero out entire channels. Each channel will be zeroed out independently on every forward call with probability p using samples from a Bernoulli distribution.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Linear">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-linear.html">
+                Linear
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Linear`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Linear\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Linear.fs#L11-11" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              A model that applies a linear transformation to the incoming data: \(y = xA^T + b\)
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LSTM">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-lstm.html">
+                LSTM
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.LSTM`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.LSTM\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Recurrent.fs#L299-299" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Long short-term memory (LSTM) recurrent neural network.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LSTMCell">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-lstmcell.html">
+                LSTMCell
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.LSTMCell`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.LSTMCell\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Recurrent.fs#L164-164" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Unit cell of a long short-term memory (LSTM) recurrent neural network. Prefer using the RNN class instead, which can combine RNNCells in multiple layers.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Mode">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-mode.html">
+                Mode
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Mode`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Mode\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L242-242" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Indicates the training or evaluation mode for a model.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Model">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-model.html">
+                Model
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Model`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Model\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L560-560" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Model<'In, 'Out>">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-model-2.html">
+                Model<'In, 'Out>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('``cref:T:DiffSharp.Model.Model`2``')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Model`2\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L512-512" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Represents a model, primarily a collection of named parameters and sub-models and a function governed by them.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ModelBase">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-modelbase.html">
+                ModelBase
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.ModelBase`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.ModelBase\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L249-249" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Represents the base class of all models.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Parameter">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-parameter.html">
+                Parameter
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Parameter`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Parameter\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L21-21" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Represents a parameter.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ParameterDict">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-parameterdict.html">
+                ParameterDict
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.ParameterDict`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.ParameterDict\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L44-44" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Represents a collection of named parameters.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="RecurrentShape">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-recurrentshape.html">
+                RecurrentShape
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.RecurrentShape`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.RecurrentShape\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Recurrent.fs#L10-10" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="RNN">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-rnn.html">
+                RNN
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.RNN`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.RNN\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Recurrent.fs#L237-237" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Recurrent neural network.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="RNNCell">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-rnncell.html">
+                RNNCell
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.RNNCell`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.RNNCell\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Recurrent.fs#L106-106" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Unit cell of a recurrent neural network. Prefer using the RNN class instead, which can combine RNNCells in multiple layers.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Sequential">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-sequential.html">
+                Sequential
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Sequential`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Sequential\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.Sequential.fs#L9-9" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="VAE">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-vae.html">
+                VAE
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.VAE`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.VAE\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.VAE.fs#L49-49" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Variational auto-encoder
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="VAEBase">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-vaebase.html">
+                VAEBase
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.VAEBase`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.VAEBase\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.VAE.fs#L13-13" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Variational auto-encoder base
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="VAEMLP">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-vaemlp.html">
+                VAEMLP
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.VAEMLP`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.VAEMLP\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.VAE.fs#L74-74" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Variational auto-encoder with multilayer perceptron (MLP) encoder and decoder.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Weight">
+              <a href="https://diffsharp.github.io/reference/diffsharp-model-weight.html">
+                Weight
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:DiffSharp.Model.Weight`')">
+              <img src="https://diffsharp.github.io/content/img/copy-md.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-md-hover.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:DiffSharp.Model.Weight\'/>')">
+              <img src="https://diffsharp.github.io/content/img/copy-xml.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/copy-xml-hover.png" class="hover"/>
+            </div>
+            <a href="https://github.com/DiffSharp/DiffSharp//tree/dev/src/DiffSharp.Core/Model.fs#L564-564" class="fsdocs-source-link" title="Source on GitHub">
+              <img src="https://diffsharp.github.io/content/img/github.png" class="normal"/>
+              <img src="https://diffsharp.github.io/content/img/github-hover.png" class="hover"/>
+            </a>
+            <p class="fsdocs-summary">
+              Contains functionality related to generating initial parameter weights for models.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3"></div>
+        <div class="span9">
+          <hr>
+          <p style="height:50px;  display: table-cell; vertical-align: bottom;">© Copyright 2021, DiffSharp Contributors.</p>
+          <br>
+        </div>
+      </div>
+  </div>
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <script type="text/javascript">var fsdocs_search_baseurl = 'https://diffsharp.github.io/'</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+    <script type="text/javascript" src="https://diffsharp.github.io/content/fsdocs-search.js"></script>
+    <!-- END SEARCH BOX: this adds support for the search box -->
+  </body>
+</html>
